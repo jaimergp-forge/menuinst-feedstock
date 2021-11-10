@@ -14,7 +14,8 @@ build:
   string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
-    - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"
+    - cp "${SRC_DIR}/cwp.py" "${PREFIX}/"    # [unix]
+    - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"  # [win]
   entry_points:
     - menuinst = menuinst.main:main
   skip_compile_pyc:

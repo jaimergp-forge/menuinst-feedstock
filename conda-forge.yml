@@ -3,3 +3,6 @@ provider:
   osx: github_actions
   linux: github_actions
 conda_forge_output_validation: true
+channels:
+  targets:
+    - - napari
