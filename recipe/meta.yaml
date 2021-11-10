@@ -10,7 +10,7 @@ source:
 
 build:
   skip: True  # [py!=39]
-  number: 0
+  number: 1
   string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
