@@ -16,8 +16,8 @@ build:
     - {{ PYTHON }} -m pip install . -vv
     - cp "${SRC_DIR}/cwp.py" "${PREFIX}/"    # [unix]
     - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"  # [win]
-  entry_points:
-    - menuinst = menuinst.main:main
+  # entry_points:
+  #   - menuinst = menuinst.main:main
   skip_compile_pyc:
     - cwp.py
 
@@ -36,8 +36,8 @@ test:
   imports:
     - menuinst
 
-  commands:
-    - menuinst --help
+  # commands:
+  #   - menuinst --help
 
 about:
   home: https://github.com/conda/menuinst/
