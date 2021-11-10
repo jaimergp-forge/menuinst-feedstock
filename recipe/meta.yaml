@@ -1,17 +1,17 @@
-{% set version = "1.4.18" %}
+{% set version = "2.0a" %}
 
 package:
   name: menuinst
   version: {{ version }}
 
 source:
-  fn: menuinst-{{ version }}.tar.gz
-  url: https://github.com/conda/menuinst/archive/{{ version }}.tar.gz
-  sha256: f64adf261c8c0edfe5eaf929a57dce8c53b3bd043bc6ad41c85a708cd64a3363
+  git_url: https://github.com/jaimergp/menuinst
+  git_rev: cep
 
 build:
+  skip: True  # [py!=39]
   number: 0
-  skip: true  # [not win]
+  string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
     - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"
@@ -26,7 +26,10 @@ requirements:
     - pip
   run:
     - python
-    - pywin32
+    - pydantic
+    - typing_extensions  # [py<=37]
+    - pywin32  # [win]
+    - python.app  # [osx]
 
 test:
   imports:
@@ -49,3 +52,4 @@ extra:
     - goanpeca
     - jakirkham
     - carlodri
+    - jaimergp

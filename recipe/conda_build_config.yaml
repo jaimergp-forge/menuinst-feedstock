@@ -1,0 +1,5 @@
+channel_targets:
+  - napari bundle_tools
+channel_sources:
+  - conda-forge
+  - napari/label/bundle_tools
