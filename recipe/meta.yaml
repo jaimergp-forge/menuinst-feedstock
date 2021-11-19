@@ -10,7 +10,7 @@ source:
 
 build:
   number: 2
-  string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}"
+  string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}_h{{ PKG_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
     - cp "${SRC_DIR}/cwp.py" "${PREFIX}/"    # [unix]
