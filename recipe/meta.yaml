@@ -9,11 +9,10 @@ source:
   git_rev: cep
 
 build:
-  number: 6
+  number: 7
   string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}_h{{ PKG_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
-    - cp "${SRC_DIR}/cwp.py" "${PREFIX}/"    # [unix]
     - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"  # [win]
   # entry_points:
   #   - menuinst = menuinst.main:main
