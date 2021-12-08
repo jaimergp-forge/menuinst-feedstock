@@ -9,7 +9,7 @@ source:
   git_rev: cep
 
 build:
-  number: 8
+  number: 9
   string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}_h{{ PKG_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
