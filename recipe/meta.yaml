@@ -9,15 +9,15 @@ source:
   git_rev: cep
 
 build:
-  number: 9
+  number: 10
   string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}_h{{ PKG_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
-    - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"  # [win]
+    # - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"  # [win]
   # entry_points:
   #   - menuinst = menuinst.main:main
-  skip_compile_pyc:
-    - cwp.py
+  # skip_compile_pyc:
+  #   - cwp.py
 
 requirements:
   host:
