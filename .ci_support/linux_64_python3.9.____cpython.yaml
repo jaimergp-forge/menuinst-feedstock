@@ -1,9 +1,9 @@
 cdt_name:
 - cos6
 channel_sources:
-- napari/label/bundle_tools,conda-forge
+- conda-forge
 channel_targets:
-- napari bundle_tools
+- jaimergp menuinst_dev
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 pin_run_as_build:

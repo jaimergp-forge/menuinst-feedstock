@@ -1,4 +1,5 @@
 channel_targets:
-  - napari bundle_tools
+  # - napari bundle_tools
+  - jaimergp menuinst_dev
 channel_sources:
-  - napari/label/bundle_tools,conda-forge
+  - conda-forge

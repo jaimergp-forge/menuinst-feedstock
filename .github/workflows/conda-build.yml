@@ -107,12 +107,11 @@ jobs:
           miniforge-version: latest
           miniforge-variant: Mambaforge
         if: matrix.os == 'windows'
-
       - name: Build on windows
         shell: cmd
         run: |
           call activate base
-          mamba.exe install -c conda-forge 'python=3.9' conda-build conda "conda-forge-ci-setup=3" pip boa
+          mamba.exe install -c conda-forge 'python=3.9' conda-build conda pip boa conda-forge-ci-setup=3
           if errorlevel 1 exit 1
           setup_conda_rc .\ ".\recipe" .\.ci_support\%CONFIG%.yaml
           if errorlevel 1 exit 1

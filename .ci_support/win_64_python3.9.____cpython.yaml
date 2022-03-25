@@ -1,7 +1,11 @@
+c_compiler:
+- vs2017
 channel_sources:
-- napari/label/bundle_tools,conda-forge
+- conda-forge
 channel_targets:
-- napari bundle_tools
+- jaimergp menuinst_dev
+cxx_compiler:
+- vs2017
 pin_run_as_build:
   python:
     min_pin: x.x
