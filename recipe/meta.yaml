@@ -9,7 +9,7 @@ source:
   git_rev: cep
 
 build:
-  number: 17
+  number: 20
   string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}_h{{ PKG_HASH }}"
   script:
     - {{ PYTHON }} -m pip install . -vv
@@ -31,8 +31,6 @@ requirements:
   run:
     - python
     - pydantic
-    - typing_extensions  # [py<=37]
-    - pywin32  # [win]
 
 test:
   imports:

@@ -37,16 +37,41 @@ conda config --add channels napari
 conda config --set channel_priority strict
 ```
 
-Once the `napari` channel has been enabled, `menuinst` can be installed with:
+Once the `napari` channel has been enabled, `menuinst` can be installed with `conda`:
 
 ```
 conda install menuinst
 ```
 
-It is possible to list all of the versions of `menuinst` available on your platform with:
+or with `mamba`:
+
+```
+mamba install menuinst
+```
+
+It is possible to list all of the versions of `menuinst` available on your platform with `conda`:
 
 ```
 conda search menuinst --channel napari
+```
+
+or with `mamba`:
+
+```
+mamba search menuinst --channel napari
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search menuinst --channel napari
+
+# List packages depending on `menuinst`:
+mamba repoquery whoneeds menuinst --channel napari
+
+# List dependencies of `menuinst`:
+mamba repoquery depends menuinst --channel napari
 ```
 
 
