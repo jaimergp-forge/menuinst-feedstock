@@ -30,14 +30,20 @@ requirements:
     - pip
   run:
     - python
-    - pydantic
 
 test:
+  requires:
+    - pytest 
+    - pytest-cov 
+    - pydantic 
+    - hypothesis 
+    - hypothesis-jsonschema
+  source_files:
+    - tests
   imports:
     - menuinst
-
-  # commands:
-  #   - menuinst --help
+  commands:
+    - pytest --no-cov -vvs
 
 about:
   home: https://github.com/conda/menuinst/
