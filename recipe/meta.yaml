@@ -33,6 +33,7 @@ requirements:
 
 test:
   requires:
+    - conda
     - pytest 
     - pytest-cov 
     - pydantic 
