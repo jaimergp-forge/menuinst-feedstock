@@ -9,7 +9,7 @@ source:
   git_rev: cep
 
 build:
-  number: 36
+  number: 37
   string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}_h{{ PKG_HASH }}"
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
