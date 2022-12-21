@@ -3,7 +3,13 @@
 # -*- mode: yaml -*-
 
 name: Build conda package
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
@@ -149,7 +155,7 @@ jobs:
       shell: cmd
       run: |
         call activate base
-        mamba.exe install -c conda-forge 'python=3.9' conda-build conda pip boa conda-forge-ci-setup=3 "py-lief<0.12"
+        mamba.exe install -c conda-forge 'python=3.9' 'conda-build=3.22' conda pip boa conda-forge-ci-setup=3 "py-lief<0.12"
         if errorlevel 1 exit 1
         setup_conda_rc .\ ".\recipe" .\.ci_support\%CONFIG%.yaml
         if errorlevel 1 exit 1
