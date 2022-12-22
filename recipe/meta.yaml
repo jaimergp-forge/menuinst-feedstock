@@ -47,7 +47,8 @@ test:
   imports:
     - menuinst
   commands:
-    - pytest --no-cov -vvs
+    - pytest --no-cov -vvs  # [unix]
+    - pytest --no-cov -vvs -k 'not test_conda'  # [win]
 
 about:
   home: https://github.com/conda/menuinst/
