@@ -14,13 +14,12 @@ build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
+    # Apparently these files make the post-build linkage analysis crash
+    # and we should not need them on Windows
     - del /q "{{ SRC_DIR }}\\menuinst\\data\\osx_launcher_*"  # [win]
     - {{ PYTHON }} -m pip install . -vv
   # entry_points:
   #   - menuinst = menuinst.main:main
-  # Apparently these files make the post-build linkage analysis crash
-  overlinking_ignore_patterns:                        # [win]
-    - "{{ SP_DIR }}\\menuinst\\data\\osx_launcher_*"  # [win]
 
 requirements:
   build:
@@ -47,8 +46,7 @@ test:
   imports:
     - menuinst
   commands:
-    - pytest --no-cov -vvs  # [unix]
-    - pytest --no-cov -vvs -k 'not test_conda'  # [win]
+    - pytest --no-cov -vvs
 
 about:
   home: https://github.com/conda/menuinst/
