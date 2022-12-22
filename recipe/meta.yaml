@@ -14,13 +14,11 @@ build:
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
-    - {{ PYTHON }} -m pip install . -vv                      # [win]
+    - {{ PYTHON }} -m pip install . -vv
+    - "@ECHO ON"  # [win]
     - del /q "{{ SP_DIR }}\\menuinst\\data\\osx_launcher_*"  # [win]
-    # - copy "%SRC_DIR%\\cwp.py" "%PREFIX%\\"  # [win]
   # entry_points:
   #   - menuinst = menuinst.main:main
-  # skip_compile_pyc:
-  #   - cwp.py
   # Apparently these files make the post-build linkage analysis crash
   overlinking_ignore_patterns:                        # [win]
     - "{{ SP_DIR }}\\menuinst\\data\\osx_launcher_*"  # [win]
@@ -40,10 +38,10 @@ requirements:
 test:
   requires:
     - conda
-    - pytest 
-    - pytest-cov 
-    - pydantic 
-    - hypothesis 
+    - pytest
+    - pytest-cov
+    - pydantic
+    - hypothesis
     - hypothesis-jsonschema
   source_files:
     - tests
