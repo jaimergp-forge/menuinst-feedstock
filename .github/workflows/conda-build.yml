@@ -156,28 +156,15 @@ jobs:
       run: |
         call activate base
         mamba.exe install -c conda-forge 'python=3.9' 'conda-build=3.22' conda pip boa conda-forge-ci-setup=3 "py-lief<0.12"
-        if errorlevel 1 exit 1
+        IF %ERRORLEVEL% NEQ 0 exit %ERRORLEVEL%
         setup_conda_rc .\ ".\recipe" .\.ci_support\%CONFIG%.yaml
-        if errorlevel 1 exit 1
+        IF %ERRORLEVEL% NEQ 0 exit %ERRORLEVEL%
 
         if EXIST LICENSE.txt (
           copy LICENSE.txt "recipe\\recipe-scripts-license.txt"
         )
         conda.exe mambabuild "recipe" -m .ci_support\%CONFIG%.yaml
-        if errorlevel 1 exit 1
-      env:
-        PYTHONUNBUFFERED: 1
-        CONFIG: ${{ matrix.CONFIG }}
-        CI: github_actions
-        UPLOAD_PACKAGES: ${{ matrix.UPLOAD_PACKAGES }}
-        BINSTAR_TOKEN: ${{ secrets.BINSTAR_TOKEN }}
-        FEEDSTOCK_TOKEN: ${{ secrets.FEEDSTOCK_TOKEN }}
-        STAGING_BINSTAR_TOKEN: ${{ secrets.STAGING_BINSTAR_TOKEN }}
-      if: matrix.os == 'windows'
-    - name: Validate / Upload
-      if: matrix.os == 'windows'
-      run: |
-        call activate base
+        IF %ERRORLEVEL% NEQ 0 exit %ERRORLEVEL%
         set "FEEDSTOCK_NAME=%GITHUB_REPOSITORY:*/=%"
         set "GIT_BRANCH=%GITHUB_REF:refs/heads/=%"
         if /i "%GITHUB_EVENT_NAME%" == "pull_request" (
@@ -186,11 +173,11 @@ jobs:
           set "IS_PR_BUILD=False"
         )
         validate_recipe_outputs "%FEEDSTOCK_NAME%"
-        if errorlevel 1 exit 1
+        IF %ERRORLEVEL% NEQ 0 exit %ERRORLEVEL%
         if /i "%UPLOAD_PACKAGES%" == "true" (
           if /i "%IS_PR_BUILD%" == "false" (
             upload_package --validate --feedstock-name="%FEEDSTOCK_NAME%" .\ ".\recipe" .ci_support\%CONFIG%.yaml
-            if errorlevel 1 exit 1
+            IF %ERRORLEVEL% NEQ 0 exit %ERRORLEVEL%
           )
         )
       env:
