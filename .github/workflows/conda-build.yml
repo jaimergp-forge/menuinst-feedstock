@@ -152,6 +152,7 @@ jobs:
         miniforge-variant: Mambaforge
       if: matrix.os == 'windows'
     - name: Build on windows
+      if: matrix.os == 'windows'
       shell: cmd
       run: |
         call activate base
