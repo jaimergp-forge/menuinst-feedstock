@@ -19,39 +19,39 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # - CONFIG: linux_64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-          #   os: ubuntu
-          # - CONFIG: linux_64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-          #   os: ubuntu
-          # - CONFIG: linux_64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-          #   os: ubuntu
-          # - CONFIG: linux_64_channel_targetsnapari_bundle_tools_2python3.10.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-          #   os: ubuntu
-          # - CONFIG: linux_64_channel_targetsnapari_bundle_tools_2python3.8.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-          #   os: ubuntu
-          # - CONFIG: linux_64_channel_targetsnapari_bundle_tools_2python3.9.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-          #   os: ubuntu
-          # - CONFIG: win_64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: windows
-          # - CONFIG: win_64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: windows
-          # - CONFIG: win_64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: windows
+          - CONFIG: linux_64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
+            UPLOAD_PACKAGES: True
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+            os: ubuntu
+          - CONFIG: linux_64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
+            UPLOAD_PACKAGES: True
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+            os: ubuntu
+          - CONFIG: linux_64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
+            UPLOAD_PACKAGES: True
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+            os: ubuntu
+          - CONFIG: linux_64_channel_targetsnapari_bundle_tools_2python3.10.____cpython
+            UPLOAD_PACKAGES: True
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+            os: ubuntu
+          - CONFIG: linux_64_channel_targetsnapari_bundle_tools_2python3.8.____cpython
+            UPLOAD_PACKAGES: True
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+            os: ubuntu
+          - CONFIG: linux_64_channel_targetsnapari_bundle_tools_2python3.9.____cpython
+            UPLOAD_PACKAGES: True
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+            os: ubuntu
+          - CONFIG: win_64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
+            UPLOAD_PACKAGES: True
+            os: windows
+          - CONFIG: win_64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
+            UPLOAD_PACKAGES: True
+            os: windows
+          - CONFIG: win_64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
+            UPLOAD_PACKAGES: True
+            os: windows
           - CONFIG: win_64_channel_targetsnapari_bundle_tools_2python3.10.____cpython
             UPLOAD_PACKAGES: True
             os: windows
@@ -61,42 +61,42 @@ jobs:
           - CONFIG: win_64_channel_targetsnapari_bundle_tools_2python3.9.____cpython
             UPLOAD_PACKAGES: True
             os: windows
-          # - CONFIG: osx_64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_64_channel_targetsnapari_bundle_tools_2python3.10.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_64_channel_targetsnapari_bundle_tools_2python3.8.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_64_channel_targetsnapari_bundle_tools_2python3.9.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_arm64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_arm64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_arm64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_arm64_channel_targetsnapari_bundle_tools_2python3.10.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_arm64_channel_targetsnapari_bundle_tools_2python3.8.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
-          # - CONFIG: osx_arm64_channel_targetsnapari_bundle_tools_2python3.9.____cpython
-          #   UPLOAD_PACKAGES: True
-          #   os: macos
+          - CONFIG: osx_64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_64_channel_targetsnapari_bundle_tools_2python3.10.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_64_channel_targetsnapari_bundle_tools_2python3.8.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_64_channel_targetsnapari_bundle_tools_2python3.9.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_arm64_channel_targetsjaimergp_menuinst_devpython3.10.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_arm64_channel_targetsjaimergp_menuinst_devpython3.8.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_arm64_channel_targetsjaimergp_menuinst_devpython3.9.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_arm64_channel_targetsnapari_bundle_tools_2python3.10.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_arm64_channel_targetsnapari_bundle_tools_2python3.8.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
+          - CONFIG: osx_arm64_channel_targetsnapari_bundle_tools_2python3.9.____cpython
+            UPLOAD_PACKAGES: True
+            os: macos
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -155,7 +155,7 @@ jobs:
       shell: cmd
       run: |
         call activate base
-        mamba.exe install -c conda-forge 'python=3.9' 'conda-build=3.22' conda pip boa conda-forge-ci-setup=3 "py-lief<0.12"
+        mamba.exe install -c conda-forge 'python=3.9' conda-build conda pip boa conda-forge-ci-setup=3 "py-lief<0.12"
         IF %ERRORLEVEL% NEQ 0 exit %ERRORLEVEL%
         setup_conda_rc .\ ".\recipe" .\.ci_support\%CONFIG%.yaml
         IF %ERRORLEVEL% NEQ 0 exit %ERRORLEVEL%
