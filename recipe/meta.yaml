@@ -10,7 +10,7 @@ source:
 
 build:
   number: 39
-  string: "{{ PKG_BUILDNUM }}_{{ GIT_DESCRIBE_HASH }}_h{{ PKG_HASH }}"
+  string: "py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ GIT_DESCRIBE_HASH }}_{{ PKG_BUILDNUM }}"
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
@@ -20,6 +20,9 @@ build:
   #   - menuinst = menuinst.main:main
   # skip_compile_pyc:
   #   - cwp.py
+  # Apparently these files make the post-build linkage analysis crash
+  overlinking_ignore_patterns:                     # [win]
+    - "{{ SP_DIR }}/menuinst/data/osx_launcher_*"  # [win]
 
 requirements:
   build:
