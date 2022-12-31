@@ -9,7 +9,7 @@ source:
   git_rev: cep
 
 build:
-  number: 40
+  number: 41
   string: "py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ GIT_DESCRIBE_HASH }}_{{ PKG_BUILDNUM }}"
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
