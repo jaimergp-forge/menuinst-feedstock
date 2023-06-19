@@ -46,6 +46,8 @@ test:
   imports:
     - menuinst
   commands:
+    - unset CI  # [unix]
+    - set "CI="  # [win]
     - pytest --no-cov -vvs
 
 about:
