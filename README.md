@@ -1,11 +1,11 @@
-About menuinst
-==============
+About menuinst-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/menuinst-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/conda/menuinst/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/menuinst-feedstock/blob/master/LICENSE.txt)
 
 Summary: cross platform install of menu items
 
