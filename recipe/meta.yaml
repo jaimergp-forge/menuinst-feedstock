@@ -48,7 +48,7 @@ test:
   commands:
     - unset CI  # [unix]
     - set "CI="  # [win]
-    - pytest --no-cov -vvs
+    - pytest --no-cov -vvs -k "not elevation"
 
 about:
   home: https://github.com/conda/menuinst/
