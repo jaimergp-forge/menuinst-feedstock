@@ -9,7 +9,7 @@ source:
   git_rev: cep-devel
 
 build:
-  number: 60
+  number: 65
   string: "py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ GIT_DESCRIBE_HASH }}_{{ PKG_BUILDNUM }}"
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
@@ -38,7 +38,7 @@ test:
     - conda
     - pytest
     - pytest-cov
-    - pydantic
+    - pydantic <2.0a0
     - hypothesis
     - hypothesis-jsonschema
   source_files:
